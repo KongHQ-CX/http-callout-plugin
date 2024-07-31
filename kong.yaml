@@ -1,0 +1,19 @@
+_format_version: "3.0"
+
+routes:
+  - name: "terminator"
+    paths:
+      - "~/test$"
+    plugins:
+      - name: request-termination
+        config:
+          status_code: 200
+          echo: true
+      - name: http-callout
+        config:
+          target_url: "https://httpbin.org/anything"
+          json_locator:
+            - headers
+            - Host
+          auth_header_name: x-test-header
+          auth_header_value: helloworld
