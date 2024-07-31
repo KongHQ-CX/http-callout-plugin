@@ -2,7 +2,6 @@ local helpers = require "spec.helpers"
 
 local cjson = require "cjson"
 local pl_file = require "pl.file"
-local strip = require("kong.tools.string").strip
 
 local PLUGIN_NAME = "http-callout"
 local MOCK_PORT = helpers.get_available_port()
