@@ -1,6 +1,5 @@
 local http = require("resty.http")
 local cjson = require("cjson.safe")
-local parse_url = require("socket.url").parse
 
 local plugin = {
   PRIORITY = 1000,

@@ -1,7 +1,6 @@
 local helpers = require "spec.helpers"
 
 local cjson = require "cjson"
-local pl_file = require "pl.file"
 
 local PLUGIN_NAME = "http-callout"
 local MOCK_PORT = helpers.get_available_port()
@@ -85,8 +84,7 @@ for _, strategy in helpers.all_strategies() do if strategy ~= "cassandra" then
         local r = client:get("/test")
 
         -- validate that the request succeeded, response status 200
-        local body = assert.res_status(200 , r)
-        local json = cjson.decode(body)
+        assert.res_status(200 , r)
 
         -- validate that the backend got the header
         local header_value = assert.request(r).has.header("x-result")
