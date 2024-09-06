@@ -9,7 +9,7 @@ build-venv:
 	@echo "DOWNLOADING PONGO..."
 	@git clone https://github.com/Kong/kong-pongo.git --depth 1 --branch $(PONGO_VERSION) .venv/pongo || true
 	@ln -sf $$(pwd)/.venv/pongo/pongo.sh $$(pwd)/.venv/bin/pongo
-	@echo "export PATH=$$PATH:$$(pwd)/.venv/bin" > .venv/env
+	@echo "export PATH=$$(pwd)/.venv/bin:$$PATH" > .venv/env
 	@echo "export KONG_VERSION=$(KONG_VERSION)" >> .venv/env
 	# @echo "export DOCKER_DEFAULT_PLATFORM=$(DOCKER_DEFAULT_PLATFORM)" >> .venv/env
 	@echo "BUILDING PONGO IMAGE"
