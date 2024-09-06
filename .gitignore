@@ -12,3 +12,7 @@ luacov.stats.out
 luacov.report.out
 # exclude Pongo containerid file
 .containerid
+
+.venv/
+build/
+.DS_Store
